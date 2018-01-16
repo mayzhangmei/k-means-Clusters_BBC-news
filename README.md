@@ -2,7 +2,9 @@
 Introduction
 
 Dataset: 44407 BBC news articles
+
 Goal: divide articles into 10 groups (clusters)
+
 Method: K-Means
 
 One article represents a doc. In a form of a dict, the ‘intro’, ‘time’, ‘content’, ‘url’ and ‘title’ of a doc are keys of the dict.
