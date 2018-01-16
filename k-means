@@ -161,7 +161,6 @@ def compute_tfidf(total_docs_words, all_docs_dict):
         total_tfidf.append(result_tfidf)
     return total_tfidf
 
-
 def update_total_docs_list(total_docs_tfidf_list, total_docs_words_list):
     """create a new list containing words, their frequencies, tfidf and doc num.
 
@@ -191,12 +190,9 @@ def update_total_docs_list(total_docs_tfidf_list, total_docs_words_list):
         new_list.append((vector_doc,doc_num))
     return new_list
 
-
-
 def sort_dict(D):
     """Sort a dict by the 2nd element of the values in a descent order."""
     return sorted(D.items(), key = lambda x: x[1], reverse = True)
-
 
 def computer_avg_tfidf(total_docs_list):
     """Compute the mean values of tf-idf of words from all docs' contents.
@@ -218,8 +214,6 @@ def computer_avg_tfidf(total_docs_list):
         D_avg[word] = D_sum[word]/total_docs_size
     return D_avg
 
-
-
 def select_words(avg_tfidf, all_docs_dict):
     """Select 2000 words that occurred in at least 30 docs
     and whose tfidf values in top 2000.
@@ -240,8 +234,6 @@ def select_words(avg_tfidf, all_docs_dict):
     for i in range(len(select_2000_words)):
         select_words_list.append(select_2000_words[i][0])
     return select_words_list
-
-
 
 def vector_standard(total_docs_list, select_2000_words_list):
     """Standardize every doc as a 2000-division vector.
@@ -267,8 +259,6 @@ def vector_standard(total_docs_list, select_2000_words_list):
                 vector_dict[word] = doc_dict[word][1]
         vector_list.append((vector_dict, doc_num))
     return vector_list
-
-
 
 def distance(vector1, vector2):
     """Compute Euclidean distance of two vectors in the form of two dicts.
@@ -336,7 +326,6 @@ def update_centroids(clusters):
         new_centroids_list.append(avg_value)
     return new_centroids_list
 
-
 def main():
 
     total_docs_content_list = get_total_docs(doc)
@@ -357,7 +346,7 @@ def main():
 
     centroids = centroids_0
     count = 0
-    while count < 100:
+    while count < 1000:
         clusters = assign_clusters(vector_standard_list, centroids)
         count += 1
         if count % 20 == 0:
