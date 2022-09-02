@@ -1,5 +1,4 @@
 # k-means-Clusters_BBC-news
-Introduction
 
 Dataset: 44407 BBC news articles
 
