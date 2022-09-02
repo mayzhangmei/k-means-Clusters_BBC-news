@@ -29,7 +29,7 @@ repo = NewsRepo()
 doc = repo.getNextDoc()
 
 def count_object(seq):
-    """Calculate frequency of an object in a list.
+    """Calculate the frequency of an object in a list.
 
     Args:
         seq: a list with strings as its elements.
